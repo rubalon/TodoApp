@@ -1,0 +1,22 @@
+{
+  "name": "todoapp",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:href": "vite build --base ./",
+    "build:github": "npm run delete:docs && npm run build:href && npm run copy:dist",
+    "delete:docs": "if exist docs rmdir /S /Q docs",
+    "copy:dist": "xcopy dist docs /E /I /Y"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "eslint": "^8.47.0",
+    "uuid": "^9.0.0"
+  }
+}
